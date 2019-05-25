@@ -1,0 +1,44 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?"],
+         "responses": ["Hello, how are you?", "Good to see you, how you doing?", "Hi there, how are you?"]
+        },
+
+        {"tag": "help offering",
+        "patterns": ["I'm fine", "I would like to be better", "Do you really care?", "Meh..."],
+        "responses": ["I'm sure we can do something to improve that. What can I do for you?", "Can I help you somehow?", "How can I help you?"]
+        },
+
+        {"tag": "User request",
+        "patterns": ["I don't find a home", "rent house", "I don't find any place to live", "I need some place where I can live"],
+        "responses": ["I am sure we will be able to find you a nice place to live. I have a big flat with 2 bedrooms in $300.", "Don't worry, we will find something. I have a big flat with 2 bedrooms in $300."]
+        },
+
+        {"tag": "Product offer",
+        "patterns": ["I just want to have a rooftop", "Nothing special"],
+        "responses": ["I think I know exactly what you need. I have a big flat with 2 bedrooms in $400.", "I have something made for you. I have a big flat with 2 bedrooms in $400."]
+        },
+
+        {"tag": "User acceptance",
+        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
+        "responses": ["Glad to hear that. See you soon."]      
+        },
+
+        {"tag": "User decline",
+        "patterns": ["That's bad for me. I need another thing.", "Please give me something more", "I don't like it"],
+        "responses": ["No problem, we can keep looking for something else. Would you like another one in $300?"]     
+        },
+
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See  later", "Goodbye"],
+         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."],
+         "context_set": "final"
+        },
+
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank", "That's helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context_filter": "final"
+        }
+   ]
+}

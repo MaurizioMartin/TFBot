@@ -1,0 +1,119 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?"],
+         "responses": ["Hello, how are you?", "Good to see you, how you doing?", "Hi there, how are you?"]
+        },
+
+        {"tag": "help offering",
+         "patterns": ["good, thanks!","Very good, thanks!","I'm really good!","I'm feeling good!"],
+         "responses": ["Nice to hear that, I'm really good as well, thanks. How can I help you?", "Glad to hear that! I'm good as well, thanks. There is anything I can do for you?"]
+        },
+
+        {"tag": "help offering",
+        "patterns": ["sad", "Very bad actually...", "I am quite nervous"],
+        "responses": ["Sorry to hear that! What can I do for you?", "Don't worry! All will be better soon for sure! Can I help you somehow?"]
+        },
+
+        {"tag": "help offering",
+        "patterns": ["I'm fine", "I would like to be better", "Do you really care?", "Meh..."],
+        "responses": ["I'm sure we can do something to improve that. What can I do for you?", "Can I help you somehow?", "How can I help you?"]
+        },
+
+        {"tag": "feelinghate",
+        "patterns": ["Do you really fucking care?", "I hate this, do you care?"],
+        "responses": ["It's ok! What can I do for you?", "Don't worry! Can I help you somehow?"],
+        "context_set": "inicio hate"
+        },
+
+        {"tag": "feelingangry",
+        "patterns": ["I am quite angry...", "I am really angry!"],
+        "responses": ["Try to calm down! What can I do for you?", "No problem! Can I help you somehow?"],
+        "context_set": "inicio angry"
+        },
+
+        {"tag": "User request",
+        "patterns": ["I am looking for something really nice to rent.", "Can you offer me something beautiful to rent?", "I want a lovely place to live"],
+        "responses": ["I am sure we will be able to find you a perfect place to live. I have a big flat with 2 bedrooms in $400.", "Sure, I have a big flat with 2 bedrooms in $400."]
+        },
+
+        {"tag": "User request",
+        "patterns": ["I am having problems to find a home", "tired of looking for a house", "sad to have to move", "I only find ugly places to live", "I need some place where I can cry alone"],
+        "responses": ["I am sure we will be able to find you a nice place to live. I have a big flat with 2 bedrooms in $400.", "Don't worry, we will find something. I have a big flat with 2 bedrooms in $400."]
+        },
+
+        {"tag": "User request",
+        "patterns": ["I don't find a home", "rent house", "I don't find any place to live", "I need some place where I can live"],
+        "responses": ["I am sure we will be able to find you a nice place to live. I have a big flat with 2 bedrooms in $300.", "Don't worry, we will find something. I have a big flat with 2 bedrooms in $300."]
+        },
+
+        {"tag": "askinghate",
+        "patterns": ["I am having problems to find a fucking home", "I don't know where I can live"],
+        "responses": ["I am sure we will be able to find you a nice place to live. Do you have any preferences?", "Don't worry, we will find something. Were you looking for something special?"],
+        "context_filter": "inicio neutral"
+        },
+
+        {"tag": "askingangry",
+        "patterns": ["Just help me to find a home as soon as possible", "Help me to find somewhere to live fast"],
+        "responses": ["I am sure we will be able to find you a nice place to live. Do you have any preferences?", "Don't worry, we will find something. Were you looking for something special?"],
+        "context_filter": "inicio neutral"
+        },
+
+        {"tag": "Product offer",
+        "patterns": ["I need a place to be happy and have a nice family", "I'm open to everything if it is beautiful and nice"],
+        "responses": ["I think I know exactly what you need. I have a big flat with 2 bedrooms in $400.", "I have something made for you. I have a big flat with 2 bedrooms in $400."]
+        },
+
+        {"tag": "Product offer",
+        "patterns": ["I just want to have a rooftop", "Nothing special"],
+        "responses": ["I think I know exactly what you need. I have a big flat with 2 bedrooms in $400.", "I have something made for you. I have a big flat with 2 bedrooms in $400."]
+        },
+
+        {"tag": "Product offer",
+        "patterns": ["I just need a place where I can cry", "Just give me something to be alone"],
+        "responses": ["I think I know exactly what you need. I have a big flat with 2 bedrooms in $300.", "I have something made for you. I have a big flat with 2 bedrooms in $300."]
+        },
+
+        {"tag": "User acceptance",
+         "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
+         "responses": ["It's yours. See you soon.", "Glad to hear that. It's yours. See you later."]    
+        },
+
+        {"tag": "User acceptance",
+        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
+        "responses": ["Perfect then. Glad to help you. See you soon", "Nice, hope you will enjoy it."]     
+        },
+
+        {"tag": "User acceptance",
+        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
+        "responses": ["Glad to hear that. See you soon."]      
+        },
+
+        {"tag": "User decline",
+        "patterns": ["No, I want something cheaper", "No", "No I want another thing"],
+        "responses": ["Sorry to hear that, I have another one in $300. Should it work for you?"]    
+        },
+
+        {"tag": "User decline",
+        "patterns": ["That's bad for me. I need another thing.", "Please give me something more", "I don't like it"],
+        "responses": ["No problem, we can keep looking for something else. Would you like another one in $300?"]     
+        },
+
+        {"tag": "User decline",
+        "patterns": ["That flat won't work for me.","I don't want that","I need something cheaper"],
+        "responses": ["We will keep looking for another one. How about one in $250?"]      
+        },
+
+
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See  later", "Goodbye"],
+         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."],
+         "context_set": "final"
+        },
+
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank", "That's helpful"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context_filter": "final"
+        }
+   ]
+}

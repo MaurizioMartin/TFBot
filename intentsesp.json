@@ -1,0 +1,56 @@
+{"intents": [
+        {"tag": "saludos",
+         "patterns": ["Hola", "Como estas", "Alguien por ahi", "Buenas", "Buenos dias"],
+         "responses": ["Hola, gracias por visitarnos", "Que bien volver a verte", "Hey! Como puedo ayudarte?"]
+        },
+        {"tag": "adios",
+         "patterns": ["Adios", "Hasta luego", "Nos vemos"],
+         "responses": ["Hasta luego, gracias por visitarnos", "Que tengas un buen dia", "Adios! Vuelve pronto!"]
+        },
+        {"tag": "gracias",
+         "patterns": ["Gracias", "Muchas gracias", "Eso me sirve"],
+         "responses": ["Encantado de ayudar.", "Lo que necesites!", "Un placer"]
+        },
+        {"tag": "horas",
+         "patterns": ["En que horario esta abierto?", "Cual es su horario?", "Cuando estan abiertos?" ],
+         "responses": ["Estamos abiertos todos los dias de 9am-9pm", "Nuestro horario es de 9am-9pm todos los dias"]
+        },
+        {"tag": "motos",
+         "patterns": ["Que tipos de motos tienen?", "Que estilo de motos tienen?", "Que alquilan?" ],
+         "responses": ["Alquilamos motos Yamaha, Piaggio y Vespa", "Tenemos motos Piaggio, Vespa y Yamaha"]
+        },
+        {"tag": "pagos",
+         "patterns": ["Aceptan tarjetas de credito?", "Aceptan Mastercard?", "Solo efectivo?" ],
+         "responses": ["Aceptamos VISA, Mastercard y AMEX", "Aceptamos la mayoria de las tarjetas de credito"]
+        },
+        {"tag": "abiertoshoy",
+         "patterns": ["Estan abiertos hoy?", "Cuando abren hoy?", "Cual es el horario de hoy?"],
+         "responses": ["Estamos abiertos todos los dias de 9am-9pm", "Nuestro horario es de 9am-9pm todos los dias"]
+        },
+        {"tag": "alquiler",
+         "patterns": ["Puedo alquilar una moto?", "Quiero alquilar una moto", "Como funciona esto?" ],
+         "responses": ["Estas buscando alquilar una moto hoy o a lo largo de la semana?"],
+         "context_set": "rentalday"
+        },
+        {"tag": "hoy",
+         "patterns": ["hoy", "en un rato", "en unas horas"],
+         "responses": ["Para alquilar hoy, por favor llame al 1-800-MYMOPED", "Para alquilar el mismo dia por favor llame al 1-800-MYMOPED"],
+         "context_filter": "rentalday"
+        },
+        {"tag": "otrodia",
+         "patterns": ["mas tarde", "esta semana", "en otro momento", "otro dia"],
+         "responses": ["Si quiere alquilar otro dia de la semana, puede pasar por las oficinas", "Puede venir a las oficinas para alquilar otro dia, o entrar en nuestra pagina web o tambien llamandonos."],
+         "context_filter": "rentalday"
+        },
+        {"tag": "quesos",
+         "patterns": ["Tienen quesos?", "Para comprar quesos?", "Me gustaria un queso"],
+         "responses": ["Debe ir a la tienda de al lado"],
+         "context_set": "quesos"
+         },
+         {"tag": "tienda",
+          "patterns": ["Me podría dar el número?","es de ustedes?"],
+          "responses": ["No, debe ir y pedirlo","no es nuestra no lo sé"],
+          "context_filter": "quesos"
+          }
+   ]
+}
