@@ -22,5 +22,5 @@ def tensorflow_model(train_x, train_y, n_epoch, batch_size, fitting, modelname):
 		#it's better to save our data
 		model.save(modelname)
 	else:
-		model.load('./model.tflearn')
+		model.load('./'+modelname)
 	return model

@@ -1,2 +1,2 @@
-model_checkpoint_path: "C:\\Users\\macl3\\Dropbox\\Programacion\\Python\\TFG\\TFG\\TFB\\modelneutral.tflearn"
-all_model_checkpoint_paths: "C:\\Users\\macl3\\Dropbox\\Programacion\\Python\\TFG\\TFG\\TFB\\modelneutral.tflearn"
+model_checkpoint_path: "C:\\Users\\macl3\\Dropbox\\Programacion\\Python\\TFG\\TFBot\\modelneutral.tflearn"
+all_model_checkpoint_paths: "C:\\Users\\macl3\\Dropbox\\Programacion\\Python\\TFG\\TFBot\\modelneutral.tflearn"

@@ -30,11 +30,23 @@ def emotiondetector(cadena):
 
 saved = input("Tienes un modelo creado?")
 if saved == '1':    
-    v = ctl.Bot()
-    v.organize_data('intents2.json')
-    v.remove_duplicates()
-    v.trainer()
-    v.neural_network(fitting=False)
+    h = ctl.Bot()
+    h.organize_data('intentshappy.json')
+    h.remove_duplicates()
+    h.trainer()
+    h.neural_network(fitting=False, modelname="modelhappy.tflearn")
+
+    s = ctl.Bot()
+    s.organize_data('intentssad.json')
+    s.remove_duplicates()
+    s.trainer()
+    s.neural_network(fitting=False, modelname="modelsad.tflearn")
+
+    n = ctl.Bot()
+    n.organize_data('intentsneutral.json')
+    n.remove_duplicates()
+    n.trainer()
+    n.neural_network(fitting=False, modelname="modelneutral.tflearn")
 else:
     h = ctl.Bot()
     h.organize_data('intentshappy.json')
