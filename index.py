@@ -1,6 +1,10 @@
 from Bot import contextual as ctl
 
-def emotiondetector(cadena):
+import itertools, pickle
+from keras.models import load_model
+from google_speech import Speech
+
+def emotiondetector(cadena,model_test,tokenizer):
         from keras.models import load_model
         from keras.preprocessing.sequence import pad_sequences
         from sklearn.metrics import classification_report, confusion_matrix
@@ -10,12 +14,9 @@ def emotiondetector(cadena):
         
         MAX_SEQUENCE_LENGTH = 30 # max length of text (words) including padding
         
-        with open('bot/tokenizer.pickle', 'rb') as handle:
-            tokenizer = pickle.load(handle)
-        
         classes = ["neutral", "happy", "sad", "hate","anger"]
         #model_test = load_model('checkpoint-0.866.h5')
-        model_test = load_model('bot/checkpoint-0.909.h5')
+        
         text=[]
         text.append(cadena)
         
@@ -67,19 +68,33 @@ else:
     n.neural_network(fitting=True, modelname="modelneutral.tflearn")
 
 pregunta=''
+lang = "en"
+with open('bot/tokenizer.pickle', 'rb') as handle:
+    tokenizer = pickle.load(handle)
+
+model_test = load_model('bot/checkpoint-0.909.h5')
 while True:
     print("\n")
     pregunta = input('Pregunta: ')
     if pregunta != 'exit':
-        emotion = emotiondetector(pregunta)
+        emotion = emotiondetector(pregunta,model_test,tokenizer)
         if emotion == "happy":
             print("emotion:",emotion)
-            h.response(pregunta,emotion)
+            respuesta = h.response(pregunta,emotion)
+            print(respuesta)
+            speech = Speech(respuesta,lang)
+            speech.play()
         elif emotion == "sad":
             print("emotion:",emotion)
-            s.response(pregunta,emotion)
+            respuesta = s.response(pregunta,emotion)
+            print(respuesta)
+            speech = Speech(respuesta,lang)
+            speech.play()
         else:
             print("emotion:",emotion)
-            n.response(pregunta,emotion)
+            respuesta = n.response(pregunta,emotion)
+            print(respuesta)
+            speech = Speech(respuesta,lang)
+            speech.play()
     else:
         break

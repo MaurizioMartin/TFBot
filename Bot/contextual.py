@@ -77,7 +77,8 @@ class Bot:
     def trainer(self):
         from Bot.training import train
         self.train_x, self.train_y = train(self.documents, self.words, self.classes)
-    def neural_network(self, fitting, modelname, n_epoch=1000, batch_size=8):
+
+    def neural_network(self, fitting, modelname, n_epoch=1000, batch_size=4):
         from Bot.model import tensorflow_model
         if modelname == "modelhappy.tflearn":
             self.modelhappy = tensorflow_model(self.train_x, self.train_y, n_epoch, batch_size, fitting, modelname)
@@ -98,6 +99,7 @@ class Bot:
             results = self.modelneutral.predict([training.bow(sentence, self.words, show_details)])[0]
         #filtra las predicciones por debajo del límite
         results = [[i,r] for i,r in enumerate(results) if r > training.ERROR_THRESHOLD]
+        print(results)
         #ordenamos por orden de probabilidad
         results.sort(key=lambda x: x[1], reverse=True)
         return_list = []
@@ -113,7 +115,7 @@ class Bot:
             while results:
                 for i in self.intents['intents']:
                     if i['tag'] == results[0][0]:
-                        return print(random.choice(i['responses']))
+                        return random.choice(i['responses'])
                 results.pop(0)
         """ Respuesta del chat """
         """

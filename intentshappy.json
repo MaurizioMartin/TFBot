@@ -5,7 +5,7 @@
         },
 
         {"tag": "help offering",
-         "patterns": ["good, thanks!","Very good, thanks!","I'm really good!","I'm feeling good!"],
+         "patterns": ["good, thanks!","Very good, thanks!","I'm really good!","I'm feeling good!", "I'm fine","I'm ok"],
          "responses": ["Nice to hear that, I'm really good as well, thanks. How can I help you?", "Glad to hear that! I'm good as well, thanks. There is anything I can do for you?"]
         },
 
@@ -21,7 +21,7 @@
 
         {"tag": "User acceptance",
          "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
-         "responses": ["It's yours. See you soon.", "Glad to hear that. It's yours. See you later."]    
+         "responses": ["It's yours. Anything else?.", "Glad to hear that. It's yours. Anything else?"]    
         },
 
         {"tag": "User decline",

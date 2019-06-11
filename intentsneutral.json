@@ -5,13 +5,13 @@
         },
 
         {"tag": "help offering",
-        "patterns": ["I'm fine", "I would like to be better", "Do you really care?", "Meh..."],
-        "responses": ["I'm sure we can do something to improve that. What can I do for you?", "Can I help you somehow?", "How can I help you?"]
-        },
+        "patterns": ["I'm fine", "I'm allright", "Do you really care?", "Meh..."],
+        "responses": ["Great, what can I do for you?", "Can I help you somehow?", "How can I help you?"]
+        },      
 
         {"tag": "User request",
         "patterns": ["I don't find a home", "rent house", "I don't find any place to live", "I need some place where I can live"],
-        "responses": ["I am sure we will be able to find you a nice place to live. I have a big flat with 2 bedrooms in $300.", "Don't worry, we will find something. I have a big flat with 2 bedrooms in $300."]
+        "responses": ["Ok, I have a big flat with 2 bedrooms in $300.", "Sure!, I have a big flat with 2 bedrooms in $400."]
         },
 
         {"tag": "Product offer",

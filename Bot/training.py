@@ -4,7 +4,7 @@ import nltk
 from nltk.stem.lancaster import LancasterStemmer
 stemmer = LancasterStemmer()
 
-ERROR_THRESHOLD = 0.25
+ERROR_THRESHOLD = 0.15
 
 def train(documents, words, classes):
 	"""Unfortunately the data structure we have won’t work with Tensorflow. 
