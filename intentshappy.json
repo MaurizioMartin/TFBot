@@ -1,6 +1,6 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?"],
+         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up"],
          "responses": ["Hello, how are you?", "Good to see you, how you doing?", "Hi there, how are you?"]
         },
 
@@ -20,12 +20,12 @@
         },
 
         {"tag": "User acceptance",
-         "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
+         "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok", "sure","I will take it","that one seems perfect", "That one would be great"],
          "responses": ["It's yours. Anything else?.", "Glad to hear that. It's yours. Anything else?"]    
         },
 
         {"tag": "User decline",
-        "patterns": ["No, I want something cheaper", "No", "No I want another thing"],
+        "patterns": ["No, I want something cheaper", "No", "No I want another thing","That one is too expensive","I can't afford that","I need something cheaper","that's too expensive", "expensive"],
         "responses": ["Sorry to hear that, I have another one in $300. Should it work for you?"]    
         },
 
@@ -36,7 +36,7 @@
         },
 
         {"tag": "thanks",
-         "patterns": ["Thanks", "Thank", "That's helpful"],
+         "patterns": ["Thanks", "Thank", "That's helpful","This was very kind of you","I really appreciate it"],
          "responses": ["Happy to help!", "Any time!", "My pleasure"],
          "context_filter": "final"
         }

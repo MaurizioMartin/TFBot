@@ -1,6 +1,6 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?"],
+         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up"],
          "responses": ["Hello, how are you?", "Good to see you, how you doing?", "Hi there, how are you?"]
         },
 
@@ -10,7 +10,7 @@
         },      
 
         {"tag": "User request",
-        "patterns": ["I don't find a home", "rent house", "I don't find any place to live", "I need some place where I can live"],
+        "patterns": ["I don't find a home", "rent house", "I don't find any place to live", "I need some place where I can live","I need to rent a house","I would like to rent a house","I would like to rent a home"],
         "responses": ["Ok, I have a big flat with 2 bedrooms in $300.", "Sure!, I have a big flat with 2 bedrooms in $400."]
         },
 
@@ -20,17 +20,17 @@
         },
 
         {"tag": "User acceptance",
-        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
+        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok", "sure","I will take it","that one seems perfect"],
         "responses": ["Glad to hear that. See you soon."]      
         },
 
         {"tag": "User decline",
-        "patterns": ["That's bad for me. I need another thing.", "Please give me something more", "I don't like it"],
+        "patterns": ["That's bad for me. I need another thing.", "Please give me something more", "I don't like it", "I need something cheaper","I can't afford that", "that's too expensive", "expensive", "anything cheaper?"],
         "responses": ["No problem, we can keep looking for something else. Would you like another one in $300?"]     
         },
 
         {"tag": "goodbye",
-         "patterns": ["Bye", "See  later", "Goodbye"],
+         "patterns": ["Bye", "See  later", "Goodbye","This was very kind of you","I really appreciate it"],
          "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."],
          "context_set": "final"
         },

@@ -1,11 +1,11 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?"],
+         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up"],
          "responses": ["Hello, how are you?", "Good to see you, how you doing?", "Hi there, how are you?"]
         },
 
         {"tag": "help offering",
-        "patterns": ["sad", "Very bad actually...", "I am quite nervous"],
+        "patterns": ["sad", "Very bad actually...", "I am quite nervous", "I'm bad", "Bad"],
         "responses": ["Sorry to hear that! What can I do for you?", "Don't worry! All will be better soon for sure! Can I help you somehow?"]
         },
 
@@ -20,12 +20,12 @@
         },
 
         {"tag": "User acceptance",
-        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok"],
+        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok", "sure","I will take it","that one seems perfect"],
         "responses": ["Perfect then. Glad to help you. See you soon", "Nice, hope you will enjoy it."]     
         },
 
         {"tag": "User decline",
-        "patterns": ["That flat won't work for me.","I don't want that","I need something cheaper"],
+        "patterns": ["That flat won't work for me.","I don't want that","I need something cheaper","That's so expensive","I can't afford that"],
         "responses": ["We will keep looking for another one. How about one in $250?"]      
         },
 
@@ -36,7 +36,7 @@
         },
 
         {"tag": "thanks",
-         "patterns": ["Thanks", "Thank", "That's helpful"],
+         "patterns": ["Thanks", "Thank", "That's helpful","This was very kind of you","I really appreciate it"],
          "responses": ["Happy to help!", "Any time!", "My pleasure"],
          "context_filter": "final"
         }

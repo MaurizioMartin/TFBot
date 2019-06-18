@@ -52,7 +52,7 @@ class Bot:
         Cada vez que se llame esta funcion, hay que llamar a remove_duplicates"""
         import nltk
         import json
-        with open(json_file) as json_data:
+        with open(json_file, "r") as json_data:
             intents = json.load(json_data)
             # loop a través de cada sentencia de los patrones dentro de cada intento
             for intent in intents['intents']:
@@ -90,7 +90,9 @@ class Bot:
     def classify(self, sentence, emotion, show_details=False):
         """ Clasificador para la sentencia que se recibe del usuario """
         import Bot.training as training
+        import json
         #genera probabilidades del modelo
+        improve = False
         if emotion == "happy":
             results = self.modelhappy.predict([training.bow(sentence, self.words, show_details)])[0]
         elif emotion == "sad":
@@ -99,18 +101,41 @@ class Bot:
             results = self.modelneutral.predict([training.bow(sentence, self.words, show_details)])[0]
         #filtra las predicciones por debajo del límite
         results = [[i,r] for i,r in enumerate(results) if r > training.ERROR_THRESHOLD]
-        print(results)
         #ordenamos por orden de probabilidad
         results.sort(key=lambda x: x[1], reverse=True)
         return_list = []
+        returnhelp_list = []
         for r in results:
             return_list.append((self.classes[r[0]], r[1]))
         #devuelve una tupla del intento con la probabilidad
+        #print("list",return_list)
+        if improve and len(return_list) >=2:
+            if emotion == "happy":
+                json_file = "intentshappy.json"
+            elif emotion == "sad":
+                json_file = "intentssad.json"
+            else:
+                json_file = "intentsneutral.json"
+            print("Ayuda a mejorar")
+            for j in return_list:
+                print(j)
+            pos = input("which one did you mean?")
+            pos = int(pos)
+            returnhelp_list.append(return_list[pos])
+            with open(json_file, "r+") as json_data:
+                intents = json.load(json_data)
+            # loop a través de cada sentencia de los patrones dentro de cada intento
+                for intent in intents['intents']:
+                    if intent['tag'] == returnhelp_list[0][0]:
+                        intent["patterns"].append("hola")
+                        #json_data.write(json.dumps(intents))
+            return returnhelp_list
         return return_list
     
     def response(self, sentence, emotion, userID='123', show_details=False):
         import random
         results = self.classify(sentence, emotion)
+        print(results)
         if results:
             while results:
                 for i in self.intents['intents']:
