@@ -1,16 +1,16 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up"],
+         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up", "I need help", "Good morning", "Good afternoon", "Good night"],
          "responses": ["Hello, how are you?", "Good to see you, how you doing?", "Hi there, how are you?"]
         },
 
         {"tag": "help offering",
-        "patterns": ["sad", "Very bad actually...", "I am quite nervous", "I'm bad", "Bad"],
+        "patterns": ["sad", "Very bad actually...", "I am quite nervous", "I'm bad", "Bad", "bad and you?"],
         "responses": ["Sorry to hear that! What can I do for you?", "Don't worry! All will be better soon for sure! Can I help you somehow?"]
         },
 
         {"tag": "User request",
-        "patterns": ["I am having problems to find a home", "tired of looking for a house", "sad to have to move", "I only find ugly places to live", "I need some place where I can cry alone"],
+        "patterns": ["I am having problems to find a home", "Do you have something to rent?", "tired of looking for a house", "sad to have to move", "I only find ugly places to live", "I need some place where I can cry alone"],
         "responses": ["I am sure we will be able to find you a nice place to live. I have a big flat with 2 bedrooms in $400.", "Don't worry, we will find something. I have a big flat with 2 bedrooms in $400."]
         },
 
@@ -25,7 +25,7 @@
         },
 
         {"tag": "User decline",
-        "patterns": ["That flat won't work for me.","I don't want that","I need something cheaper","That's so expensive","I can't afford that"],
+        "patterns": ["That flat won't work for me.","I need another thing", "I don't want that","I need something cheaper","That's so expensive","I can't afford that"],
         "responses": ["We will keep looking for another one. How about one in $250?"]      
         },
 
