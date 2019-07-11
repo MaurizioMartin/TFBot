@@ -1,44 +1,62 @@
 {"intents": [
         {"tag": "greeting",
-         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up", "I need help", "Good morning", "Good afternoon", "Good night"],
-         "responses": ["Hello, how are you?", "Good to see you, how you doing?", "Hi there, how are you?"]
+         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up", "I need help", "Good morning", "Good afternoon", "Good evening","Good night"],
+         "responses": ["Hello, TFBot here. How are you?", "Good to see you, I'm TFBot. How you doing?", "Hi there, I'm TFBot. How are you?"]
+        },
+
+        {"tag": "name",
+        "patterns": ["What's your name?", "What are you?", "Who's there?", "Whom I am talking with?"],
+        "responses": ["I'm TFBot", "TFBot here!"]
         },
 
         {"tag": "help offering",
-        "patterns": ["sad", "Very bad actually...", "I am quite nervous", "I'm bad", "Bad", "bad and you?"],
+        "patterns": ["sad", "Very bad actually...", "I am quite nervous", "I'm bad", "Bad", "bad and you?", "It's the worst day of my life"],
         "responses": ["Sorry to hear that! What can I do for you?", "Don't worry! All will be better soon for sure! Can I help you somehow?"]
         },
 
         {"tag": "User request",
         "patterns": ["I am having problems to find a home", "Do you have something to rent?", "tired of looking for a house", "sad to have to move", "I only find ugly places to live", "I need some place where I can cry alone"],
-        "responses": ["I am sure we will be able to find you a nice place to live. I have a big flat with 2 bedrooms in $400.", "Don't worry, we will find something. I have a big flat with 2 bedrooms in $400."]
+        "responses": ["I am sure we will be able to find you a nice place to live. I have a big flat with 2 bedrooms in $400. What do you think?", "Don't worry, we will find something. I have a big flat with 2 bedrooms in $400. How about that one?"]
         },
 
         {"tag": "Product offer",
         "patterns": ["I just need a place where I can cry", "Just give me something to be alone"],
-        "responses": ["I think I know exactly what you need. I have a big flat with 2 bedrooms in $300.", "I have something made for you. I have a big flat with 2 bedrooms in $300."]
+        "responses": ["I think I know exactly what you need. I have a big flat with 2 bedrooms in $300. Do you want it?", "I have something made for you. I have a big flat with 2 bedrooms in $300. Do you like it?"]
         },
 
         {"tag": "User acceptance",
-        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok", "sure","I will take it","that one seems perfect"],
+        "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok", "sure","That one could work","I will take it","that one seems perfect"],
         "responses": ["Perfect then. Glad to help you. See you soon", "Nice, hope you will enjoy it."]     
         },
 
+        {"tag": "User decline cheaper",
+        "patterns": ["That's bad for me. I need another thing.", "I need something cheaper", "I can't afford that", "anything cheaper?", "cheaper"],
+        "responses": ["No problem, we can keep looking for something else. Would you like another one in $300?", "I have one cheaper in $250. Is this better for you?"]     
+        },
+
+        {"tag": "User decline expensive",
+        "patterns": ["I was looking for something luxury", "I want something more expensive","I need more", "that's too costless", "expensive", "anything more premium?"],
+        "responses": ["Sure! I have a luxury apartment for $600. What about that one?", "Of course, I have another premium one in $700. Is this up to you?"]     
+        },
+
         {"tag": "User decline",
-        "patterns": ["That flat won't work for me.","I need another thing", "I don't want that","I need something cheaper","That's so expensive","I can't afford that"],
+        "patterns": ["That flat won't work for me.","I need another thing","no", "I don't want that"],
         "responses": ["We will keep looking for another one. How about one in $250?"]      
         },
 
         {"tag": "goodbye",
          "patterns": ["Bye", "See  later", "Goodbye"],
-         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."],
-         "context_set": "final"
+         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
         },
 
         {"tag": "thanks",
          "patterns": ["Thanks", "Thank", "That's helpful","This was very kind of you","I really appreciate it"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"],
-         "context_filter": "final"
+         "responses": ["Happy to help!", "Any time!", "My pleasure"]
+        },
+
+        {"tag": "default",
+         "patterns": ["buy","restaurant"],
+         "responses": ["Sorry, that's out of my limits."]
         }
    ]
 }

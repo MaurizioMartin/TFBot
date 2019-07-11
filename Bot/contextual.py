@@ -92,7 +92,7 @@ class Bot:
         import Bot.training as training
         import json
         #genera probabilidades del modelo
-        improve = False
+        improve = True
         if emotion == "happy":
             results = self.modelhappy.predict([training.bow(sentence, self.words, show_details)])[0]
         elif emotion == "sad":
@@ -121,15 +121,34 @@ class Bot:
                 print(j)
             pos = input("which one did you mean?")
             pos = int(pos)
-            returnhelp_list.append(return_list[pos])
-            with open(json_file, "r+") as json_data:
-                intents = json.load(json_data)
-            # loop a través de cada sentencia de los patrones dentro de cada intento
-                for intent in intents['intents']:
-                    if intent['tag'] == returnhelp_list[0][0]:
-                        intent["patterns"].append("hola")
-                        #json_data.write(json.dumps(intents))
-            return returnhelp_list
+            if(pos == 9):
+                inputtag = input("¿A qué tag corresponde?")
+                #preguntamos a que tag corresponde
+                with open(json_file, 'r') as json_data:
+                    data = json.load(json_data)
+                    i=0
+                    for p in data['intents']:
+                        if(p['tag'] == inputtag):
+                            returnhelp_list.append((inputtag,1))
+                            data['intents'][i]['patterns'].append(sentence)
+                        i=i+1
+                json.dump(data, open(json_file, 'w'), indent=3)
+                return returnhelp_list
+            elif(pos == 8):
+                return return_list
+            else:
+                returnhelp_list.append(return_list[pos])
+                with open(json_file, 'r') as json_data:
+                    data = json.load(json_data)
+                    i=0
+                    for p in data['intents']:
+                        if(p['tag'] == returnhelp_list[0][0]):
+                            #print(data['intents'][i])
+                            data['intents'][i]['patterns'].append(sentence)
+                            #print(data['intents'][i]['patterns'])
+                        i=i+1
+                json.dump(data, open(json_file, 'w'), indent=3)
+                return returnhelp_list
         return return_list
     
     def response(self, sentence, emotion, userID='123', show_details=False):

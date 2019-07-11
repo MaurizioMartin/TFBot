@@ -3,6 +3,7 @@ from Bot import contextual as ctl
 import itertools, pickle
 from keras.models import load_model
 from google_speech import Speech
+import speech_recognition as sr
 
 def emotiondetector(cadena,model_test,tokenizer):
         from keras.models import load_model
@@ -73,28 +74,62 @@ with open('bot/tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 model_test = load_model('bot/checkpoint-0.909.h5')
-while True:
-    print("\n")
-    pregunta = input('Pregunta: ')
-    if pregunta != 'exit':
-        emotion = emotiondetector(pregunta,model_test,tokenizer)
-        if emotion == "happy":
-            print("emotion:",emotion)
-            respuesta = h.response(pregunta,emotion)
-            print(respuesta)
-            speech = Speech(respuesta,lang)
-            speech.play()
-        elif emotion == "sad":
-            print("emotion:",emotion)
-            respuesta = s.response(pregunta,emotion)
-            print(respuesta)
-            speech = Speech(respuesta,lang)
-            speech.play()
+modouso = input("Voz o texto?")
+if modouso == '0': 
+    while True:
+        print("\n")
+
+        r = sr.Recognizer()
+        with sr.Microphone() as source:
+            print("Pregunta: ")
+            audio = r.listen(source)
+        pregunta = r.recognize_google(audio)
+        print(pregunta)
+        if pregunta != 'exit':
+            emotion = emotiondetector(pregunta,model_test,tokenizer)
+            if emotion == "happy":
+                print("emotion:",emotion)
+                respuesta = h.response(pregunta,emotion)
+                print(respuesta)
+                speech = Speech(respuesta,lang)
+                speech.play()
+            elif emotion == "sad":
+                print("emotion:",emotion)
+                respuesta = s.response(pregunta,emotion)
+                print(respuesta)
+                speech = Speech(respuesta,lang)
+                speech.play()
+            else:
+                print("emotion:",emotion)
+                respuesta = n.response(pregunta,emotion)
+                print(respuesta)
+                speech = Speech(respuesta,lang)
+                speech.play()
         else:
-            print("emotion:",emotion)
-            respuesta = n.response(pregunta,emotion)
-            print(respuesta)
-            speech = Speech(respuesta,lang)
-            speech.play()
-    else:
-        break
+            break
+else:
+        while True:
+            print("\n")
+            pregunta = input('Pregunta: ')
+            if pregunta != 'exit':
+                emotion = emotiondetector(pregunta,model_test,tokenizer)
+                if emotion == "happy":
+                    print("emotion:",emotion)
+                    respuesta = h.response(pregunta,emotion)
+                    print(respuesta)
+                    speech = Speech(respuesta,lang)
+                    speech.play()
+                elif emotion == "sad":
+                    print("emotion:",emotion)
+                    respuesta = s.response(pregunta,emotion)
+                    print(respuesta)
+                    speech = Speech(respuesta,lang)
+                    speech.play()
+                else:
+                    print("emotion:",emotion)
+                    respuesta = n.response(pregunta,emotion)
+                    print(respuesta)
+                    speech = Speech(respuesta,lang)
+                    speech.play()
+            else:
+                break
