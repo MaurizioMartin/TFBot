@@ -30,7 +30,7 @@ def emotiondetector(cadena,model_test,tokenizer):
             #print(text[n],"\nPrediction:",classes[pred],"\n")
             return classes[pred]
 
-saved = input("Tienes un modelo creado?")
+saved = input("Tienes un modelo creado? no = 0, si = 1")
 if saved == '1':    
     h = ctl.Bot()
     h.organize_data('intentshappy.json')
@@ -74,7 +74,7 @@ with open('bot/tokenizer.pickle', 'rb') as handle:
     tokenizer = pickle.load(handle)
 
 model_test = load_model('bot/checkpoint-0.909.h5')
-modouso = input("Voz o texto?")
+modouso = input("Voz o texto? Voz = 0, texto = 1")
 if modouso == '0': 
     while True:
         print("\n")

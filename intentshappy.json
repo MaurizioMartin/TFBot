@@ -1,62 +1,181 @@
-{"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi", "Is anyone there?", "Hello", "hey", "Can someone help me?", "what's up", "Good morning", "Good afternoon","Good evening", "Good night"],
-         "responses": ["Hello, TFBot here. How are you?", "Good to see you, I'm TFBot. How you doing?", "Hi there, I'm TFBot. How are you?"]
-        },
-
-        {"tag": "name",
-        "patterns": ["What's your name?", "What are you?", "Who's there?"],
-        "responses": ["I'm TFBot", "TFBot here!"]
-        },
-
-        {"tag": "help offering",
-         "patterns": ["good, thanks!","Very good, thanks!","I'm really good!","I'm feeling good!", "I'm fine","I'm ok", "Really good", "I'm good thanks"],
-         "responses": ["Nice to hear that, I'm really good as well, thanks. How can I help you?", "Glad to hear that! I'm good as well, thanks. There is anything I can do for you?"]
-        },
-
-        {"tag": "User request",
-        "patterns": ["I am looking for something really nice to rent.", "Do you have something to rent?", "Can you offer me something beautiful to rent?", "I want a lovely place to live", "I was looking for some place to live"],
-        "responses": ["I am sure we will be able to find you a perfect place to live. I have a big flat with 2 bedrooms in $400. Is it up to you?", "Sure, I have a big flat with 2 bedrooms in $400. Do you want it?"]
-        },
-
-        {"tag": "Product offer",
-        "patterns": ["I need a place to be happy and have a nice family", "I'm open to everything if it is beautiful and nice"],
-        "responses": ["I think I know exactly what you need. I have a big flat with 2 bedrooms in $400. Do you want it?", "I have something made for you. I have a big flat with 2 bedrooms in $400. How about it?"]
-        },
-
-        {"tag": "User acceptance",
-         "patterns": ["That's perfect for me", "Great, I want it", "Perfect, give it to me", "yes","yes, that works for me", "ok", "sure","I will take it","That one could work","that one seems perfect", "That one would be great", "Nice, I want it"],
-         "responses": ["It's yours. Anything else?.", "Glad to hear that. It's yours. Anything else?"]    
-        },
-
-        {"tag": "User decline cheaper",
-        "patterns": ["No, I want something cheaper", "I need something cheaper", "I can't afford that", "anything cheaper?", "cheaper"],
-        "responses": ["No problem, we can keep looking for something else. Would you like another one in $300?", "I have one cheaper in $250. Will this work for you?"]     
-        },
-
-        {"tag": "User decline expensive",
-        "patterns": ["I was looking for something luxury", "I want something more expensive","I need more", "that's too costless", "expensive", "anything more premium?"],
-        "responses": ["Sure! I have a luxury apartment for $600. What about that one?", "Of course, I have another premium one in $700. Is this up to you?"]     
-        },
-
-        {"tag": "User decline",
-        "patterns": ["That's bad for me. I need another thing.", "no", "Please give me something more", "I don't like it", "Do you have something more?", "Do you have anything else?"],
-        "responses": ["Are you looking for something cheaper or more expensive?"]     
-        },
-
-        {"tag": "goodbye",
-         "patterns": ["Bye", "See  later", "Goodbye"],
-         "responses": ["See you later, thanks for visiting", "Have a nice day", "Bye! Come back again soon."]
-        },
-
-        {"tag": "thanks",
-         "patterns": ["Thanks", "Thank", "That's helpful","This was very kind of you","I really appreciate it"],
-         "responses": ["Happy to help!", "Any time!", "My pleasure"]
-        },
-
-        {"tag": "default",
-         "patterns": ["buy","restaurant"],
-         "responses": ["Sorry, that's out of my limits."]
-        }
+{
+   "intents": [
+      {
+         "tag": "greeting",
+         "patterns": [
+            "Hi",
+            "Is anyone there?",
+            "Hello",
+            "hey",
+            "Can someone help me?",
+            "what's up",
+            "Good morning",
+            "Good afternoon",
+            "Good evening",
+            "Good night"
+         ],
+         "responses": [
+            "Hello, TFBot here. How are you?",
+            "Good to see you, I'm TFBot. How you doing?",
+            "Hi there, I'm TFBot. How are you?"
+         ]
+      },
+      {
+         "tag": "name",
+         "patterns": [
+            "What's your name?",
+            "What are you?",
+            "Who's there?"
+         ],
+         "responses": [
+            "I'm TFBot",
+            "TFBot here!"
+         ]
+      },
+      {
+         "tag": "help offering",
+         "patterns": [
+            "good, thanks!",
+            "Very good, thanks!",
+            "I'm really good!",
+            "I'm feeling good!",
+            "I'm fine",
+            "I'm ok",
+            "Really good",
+            "I'm good thanks",
+            "nice to meet you"
+         ],
+         "responses": [
+            "Nice to hear that, I'm really good as well, thanks. How can I help you?",
+            "Glad to hear that! I'm good as well, thanks. There is anything I can do for you?"
+         ]
+      },
+      {
+         "tag": "User request",
+         "patterns": [
+            "I am looking for something really nice to rent.",
+            "Do you have something to rent?",
+            "Can you offer me something beautiful to rent?",
+            "I want a lovely place to live",
+            "I was looking for some place to live"
+         ],
+         "responses": [
+            "I am sure we will be able to find you a perfect place to live. I have a big flat with 2 bedrooms in $400. Do you want it?",
+            "Sure, I have a big flat with 2 bedrooms in $400. Do you want it?"
+         ]
+      },
+      {
+         "tag": "Product offer",
+         "patterns": [
+            "I need a place to be happy and have a nice family",
+            "I'm open to everything if it is beautiful and nice"
+         ],
+         "responses": [
+            "I think I know exactly what you need. I have a big flat with 2 bedrooms in $400. Do you want it?",
+            "I have something made for you. I have a big flat with 2 bedrooms in $400. Do you want it?"
+         ]
+      },
+      {
+         "tag": "User acceptance",
+         "patterns": [
+            "That's perfect for me",
+            "Great, I want it",
+            "Perfect, give it to me",
+            "yes",
+            "yes, that works for me",
+            "ok",
+            "sure",
+            "I will take it",
+            "That one could work",
+            "that one seems perfect",
+            "That one would be great",
+            "Nice, I want it"
+         ],
+         "responses": [
+            "It's yours. Anything else?.",
+            "Glad to hear that. It's yours. Anything else?"
+         ]
+      },
+      {
+         "tag": "User decline cheaper",
+         "patterns": [
+            "No, I want something cheaper",
+            "I need something cheaper",
+            "I can't afford that",
+            "anything cheaper?",
+            "cheaper"
+         ],
+         "responses": [
+            "No problem, we can keep looking for something else. Would you like another one in $300?",
+            "I have one cheaper in $250. Will this work for you?"
+         ]
+      },
+      {
+         "tag": "User decline expensive",
+         "patterns": [
+            "I was looking for something luxury",
+            "I want something more expensive",
+            "I need more",
+            "that's too costless",
+            "expensive",
+            "anything more premium?"
+         ],
+         "responses": [
+            "Sure! I have a luxury apartment for $600. Do you want it?",
+            "Of course, I have another premium one in $700. Will this work for you?"
+         ]
+      },
+      {
+         "tag": "User decline",
+         "patterns": [
+            "That's bad for me. I need another thing.",
+            "no",
+            "Please give me something more",
+            "I don't like it",
+            "Do you have something more?",
+            "Do you have anything else?"
+         ],
+         "responses": [
+            "Are you looking for something cheaper or more expensive?"
+         ]
+      },
+      {
+         "tag": "goodbye",
+         "patterns": [
+            "Bye",
+            "See  later",
+            "Goodbye"
+         ],
+         "responses": [
+            "See you later, thanks for visiting",
+            "Have a nice day",
+            "Bye! Come back again soon."
+         ]
+      },
+      {
+         "tag": "thanks",
+         "patterns": [
+            "Thanks",
+            "Thank",
+            "That's helpful",
+            "This was very kind of you",
+            "I really appreciate it"
+         ],
+         "responses": [
+            "Happy to help!",
+            "Any time!",
+            "My pleasure"
+         ]
+      },
+      {
+         "tag": "default",
+         "patterns": [
+            "buy",
+            "restaurant"
+         ],
+         "responses": [
+            "Sorry, that's out of my limits."
+         ]
+      }
    ]
 }

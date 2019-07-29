@@ -92,7 +92,7 @@ class Bot:
         import Bot.training as training
         import json
         #genera probabilidades del modelo
-        improve = True
+        improve = False
         if emotion == "happy":
             results = self.modelhappy.predict([training.bow(sentence, self.words, show_details)])[0]
         elif emotion == "sad":
@@ -119,7 +119,7 @@ class Bot:
             print("Ayuda a mejorar")
             for j in return_list:
                 print(j)
-            pos = input("which one did you mean?")
+            pos = input("which one did you mean? 8 = nothing, 9 = elegir tag")
             pos = int(pos)
             if(pos == 9):
                 inputtag = input("¿A qué tag corresponde?")

@@ -77,11 +77,13 @@
             "I would like to rent a house",
             "I would like to rent a home",
             "I want to move to a new apartment",
-            "I want to move to a new house"
+            "I want to move to a new house",
+            "do you offer something?",
+            "can you offer me"
          ],
          "responses": [
             "Ok, I have a big flat with 2 bedrooms in $350. Are you interested?",
-            "Sure!, I have a big flat with 2 bedrooms in $400. What do you think about it?"
+            "Sure!, I have a big flat with 2 bedrooms in $400. Do you want it?"
          ]
       },
       {
@@ -109,7 +111,8 @@
             "sure",
             "I will take it",
             "that one seems perfect",
-            "That one could work"
+            "That one could work",
+            "i like that"
          ],
          "responses": [
             "It's yours. Anything else?.",
@@ -123,11 +126,12 @@
             "I need something cheaper",
             "I can't afford that",
             "anything cheaper?",
-            "cheaper"
+            "cheaper",
+            "I don't know"
          ],
          "responses": [
             "No problem, we can keep looking for something else. Would you like another one in $300?",
-            "I have one cheaper in $250. Would it work for you?"
+            "I have one cheaper in $250. Do you want it?"
          ]
       },
       {
@@ -141,7 +145,7 @@
             "anything more premium?"
          ],
          "responses": [
-            "Sure! I have a luxury apartment for $600. What about that one?",
+            "Sure! I have a luxury apartment for $600. Will this work for you?",
             "Of course, I have another premium one in $700. Do you like it?"
          ]
       },
@@ -181,7 +185,8 @@
          "patterns": [
             "Thanks",
             "Thank",
-            "That's helpful"
+            "That's helpful",
+            "no thanks"
          ],
          "responses": [
             "Happy to help!",
@@ -199,7 +204,9 @@
             "I want to party",
             "Do you eat?",
             "Do you want to play?",
-            "test"
+            "test",
+            "would you be my valentine?",
+            "will you marry me?"
          ],
          "responses": [
             "Sorry, that's out of my limits."
